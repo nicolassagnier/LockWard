@@ -16,7 +16,8 @@ Aquest projecte esta desenvolupat per aquestes tecnologies:
 · Connexió de la API a MariaDB:
     - Pomelo
 
-# Estat del projecte --> Configuració inicial completada i verificada
+# Estat del projecte 
+Configuració inicial completada i verificada
 · S'ha creat l'estructura de carpetes
 · Control de versions amb Git configurat
 · Component principal personalitzat
