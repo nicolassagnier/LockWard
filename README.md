@@ -6,31 +6,28 @@ LockWard és un gestor de credencials desarrollat amb Angular i C# on les contra
 # Stack Tècnic
 Aquest projecte esta desenvolupat per aquestes tecnologies:
 
-· Frontend
-    - Angular
+Frontend
 
-    - cifratge AES-256
+    Angular
+    cifratge AES-256
 
-· Backend:
+Backend:
 
-    - ASP.NET Core Web API
+    ASP.NET Core Web API
+    Json Web Tokens
 
-    - Json Web Tokens
+Base de dades: 
 
-· Base de dades: 
+    MariaDB
 
-    - MariaDB
+Connexió de la API a MariaDB:
 
-· Connexió de la API a MariaDB:
-
-    - Pomelo
+    Pomelo
 
 
 # Estat del projecte 
 Configuració inicial completada i verificada
 
-· S'ha creat l'estructura de carpetes
-
-· Control de versions amb Git configurat
-
-· Component principal personalitzat
+    S'ha creat l'estructura de carpetes
+    Control de versions amb Git configurat
+    Component principal personalitzat
