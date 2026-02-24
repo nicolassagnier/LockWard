@@ -4,12 +4,12 @@
 LockWard és un gestor de credencials desarrollat amb Angular i C# on les contrasenyes es xifren en el navegador de l'usuari abans de ser enviades al servidor. Les dades es guardaran a MariaDB i només el propietari podrà recuperar i desxifrar la seva informació.
 
 # Stack Tècnic
-Aquest projecte esta desenvolupat per aquestes tecnologies:
+Aquest projecte será desenvolupat per aquestes tecnologies:
 
 Frontend
 
     Angular
-    cifratge AES-256
+    Cifratge AES-256
 
 Backend:
 
