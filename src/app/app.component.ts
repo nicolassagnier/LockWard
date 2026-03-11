@@ -9,5 +9,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ioc-angular-lockward-nicolassagnier';
+  title = 'LockWard';
+
+constructor() {
+  console.log('Aplicacio LockWard iniciada');
 }
+}
+
