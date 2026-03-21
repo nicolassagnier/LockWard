@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LlistaElementsComponent } from "./components/llista-elements/llista-elements.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LlistaElementsComponent],
+  imports: [LlistaElementsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'LockWard';
 
-constructor() {
-  console.log('Aplicacio LockWard iniciada');
-}
+  constructor() {
+    console.log('Aplicacio LockWard iniciada');
+  }
 }
 

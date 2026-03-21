@@ -1,6 +1,10 @@
 <div class="llista">
+    <app-barra-cerca
+        (cercaCanviada)="onCerca($event)">
+    </app-barra-cerca>
+
     <app-targeta-element
-        *ngFor="let element of elementsFiltrats"
+        *ngFor="let element of elementsFiltrats; trackBy: trackById"
         [element]="element">
     </app-targeta-element>
 </div>

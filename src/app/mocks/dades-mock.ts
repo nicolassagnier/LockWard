@@ -4,7 +4,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 1,
         nom: 'Gmail',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@gmail.com',
         contrasenya: 'aB3#kL9@mN2!',
         categoria: 'Personal',
         seguretat: 95,
@@ -15,7 +15,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 2,
         nom: 'Github',
-        usuari: 'nicolassagnier',
+        usuari: 'usuari_github',
         contrasenya: 'Af!kt9#4kL@2pQ8!',
         categoria: 'Feina',
         seguretat: 98,
@@ -26,7 +26,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 3,
         nom: 'Netflix',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@netflix.com',
         contrasenya: 'B7@07ns!Kp5#',
         categoria: 'Entreteniment',
         seguretat: 80,
@@ -37,7 +37,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 4,
         nom: 'Spotify',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@spotify.com',
         contrasenya: 'jK5#098CL!2@rT',
         categoria: 'Entreteniment',
         seguretat: 84,
@@ -48,7 +48,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 5,
         nom: 'Amazon',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@amazon.com',
         contrasenya: 'Rn!9@20cT#4LmP6@wQ',
         categoria: 'Personal',
         seguretat: 99,
@@ -59,7 +59,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 6,
         nom: 'Instagram',
-        usuari: 'nicolassagnier',
+        usuari: 'usuari_instagram',
         contrasenya: 'pQ2!8mW#vX5@',
         categoria: 'Personal',
         seguretat: 97,
@@ -70,7 +70,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 7,
         nom: 'X',
-        usuari: 'nicolassagnier',
+        usuari: 'usuari_x',
         contrasenya: 'hJ6@3nR!9kT#',
         categoria: 'Personal',
         seguretat: 97,
@@ -81,7 +81,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 8,
         nom: 'LinkedIn',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@linkedin.com',
         contrasenya: 'wL4#7bN@2mP!kR9@',
         categoria: 'Feina',
         seguretat: 97,
@@ -92,7 +92,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 9,
         nom: 'Paypal',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@paypal.com',
         contrasenya: 'zX8!5qM@3vK#9nT!2pL@',
         categoria: 'Bancs',
         seguretat: 100,
@@ -103,7 +103,7 @@ export const DADES_MOCK: Element[] = [
     {
         id: 10,
         nom: 'Microsoft',
-        usuari: 'nicolas@gmail.com',
+        usuari: 'usuari@microsoft.com',
         contrasenya: 'tG9@4hD!7nQ#mK2!',
         categoria: 'Feina',
         seguretat: 97,
