@@ -1,6 +1,22 @@
 <div class="barra-cerca">
-  <input
-    type="text"
-    placeholder="Cerca credencials..."
-    (input)="onCerca($event)">
+  <form #cercaForm="ngForm" (ngSubmit)="onCerca()">
+    <div class="input-boto">
+      <input
+        type="text"
+        name="textCerca"
+        placeholder="Cerca credencials..."
+        [(ngModel)]="textCerca"
+        #campCerca="ngModel"
+        minlength="3"
+        (ngModelChange)="onCerca()">
+
+      <button type="submit" [disabled]="cercaForm.invalid && cercaForm.dirty">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+
+    <p class="error" *ngIf="textCerca.length > 0 && textCerca.length < 3">
+      Mínim 3 caràcters per cercar
+    </p>
+  </form>
 </div>

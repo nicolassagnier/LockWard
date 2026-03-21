@@ -4,10 +4,23 @@
     margin: 50px auto;
     padding: 0 1rem;
 
-    input {
+    form {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        max-width: 500px;
-        height: 50px;
+        max-width: 600px;
+    }
+
+    .input-boto {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    //estils del string input
+    input {
+        flex: 1;
+        height: 30px;
         padding: 12px 20px;
         font-size: 20px;
         border: 2px solid #e5e7eb;
@@ -16,14 +29,57 @@
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
+        //ombra al passar el ratolí
         &:hover {
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
         }
 
+        //vora al escriure
         &:focus {
             border-color: #7cd6ef;
             border-width: 3px;
             box-shadow: 0px 4px 10px rgba(1, 1, 1, 0.40);
         }
+    }
+
+    //botó cercar amb lupa
+    button {
+        height: 58px;
+        width: 50px;
+        background: #7cd6ef;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    // icona de lupa
+    .material-icons {
+        font-size: 24px;
+    }
+
+    //color més fosc al passar per sobre
+    &:hover {
+        background: #5bc4de;
+    }
+
+    //gris quan boto no es pot fer servir
+    &:disabled {
+        background: #e5e7eb;
+        cursor: not-allowed;
+    }
+}
+
+    //missatge d'error < 3 caracters
+    .error {
+        color: rgb(255, 33, 33);
+
+        text-align: left;
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+        font-style: italic;
     }
 }
