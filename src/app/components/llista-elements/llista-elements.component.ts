@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { DADES_MOCK } from '../../mocks/dades-mock';
 import { Element } from '../../models/element.model';
 import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
@@ -8,7 +8,7 @@ import { BarraCercaComponent } from '../barra-cerca/barra-cerca.component';
 @Component({
   selector: 'app-llista-elements',
   standalone: true,
-  imports: [TargetaElementComponent, NgFor, BarraCercaComponent],
+  imports: [TargetaElementComponent, NgFor, BarraCercaComponent, NgIf],
   templateUrl: './llista-elements.component.html',
   styleUrl: './llista-elements.component.scss'
 })

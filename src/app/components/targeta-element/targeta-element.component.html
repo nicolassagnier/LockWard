@@ -1,10 +1,10 @@
 <div class="targeta" *ngIf="element">
     <h3>{{ element.nom }}</h3>
     <p>Usuari: {{ element.usuari }}</p>
-    <p>Contrasenya: {{element.contrasenya }}</p>
-    <p>Categoria: {{ element.categoria }}</p>
-    <p>Seguretat: {{ element.seguretat }}</p>
+    <p>Contrasenya: {{ element.contrasenya }}</p>
+    <p>Categoria: {{ element.categoria | uppercase }}</p>
+    <p>Seguretat: {{ element.seguretat | number }}/100</p>
     <p>Longitud: {{ element.longitud }}</p>
-    <p>Data-creacio: {{ element.dataCreacio }}</p>
+    <p>Data: {{ element.dataCreacio | date:'dd/MM/yyyy' }}</p>
     <p *ngIf="element.url">Url: {{ element.url }}</p>
 </div>
