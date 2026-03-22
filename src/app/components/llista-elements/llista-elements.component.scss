@@ -1,4 +1,27 @@
+.llista{
+    //responsive
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+
+    //Mòbil
+    grid-template-columns: 1fr;
+
+    //Tablet
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    //PC
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1900px;
+        margin: 0 auto;
+    }
+}
+
 .no-resultats{
+    grid-column: 1 / -1;
     text-align: center;
     color: #6b7280;
     font-size: 1.2rem;

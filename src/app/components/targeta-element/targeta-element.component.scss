@@ -1,21 +1,66 @@
 
 .targeta {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    background: white;
+    border-radius: 12px;
     padding: 1.5rem;
-    background: #ffffff;
-    box-shadow: 1 1px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s;
-    margin: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    border-left: 5px solid #e5e7eb;
 
-    &:hover {
-    box-shadow: 0px 4px 10px rgba(1, 1, 1, 0.40);
+    //efecte
+    &:hover{
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
     }
 
-    &__nom {
-    margin: 0 0 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1f2937;
+    //colors per a cada targeta segons categoria
+    &.personal{
+        border-left-color: #7cd6ef;
+    }
+    &.feina {
+    border-left-color: #6ee7b7; // verd
+    }
+
+    &.entreteniment {
+    border-left-color: #c4b5fd; // lila
+    }
+
+    &.bancs {
+    border-left-color: #fcd34d; // groc
+    }
+
+    //capçalera estils
+    &__capçalera{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    &__nom{
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin: 0;
+    }
+    &__categoria{
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        background: #f3f4f6;
+        color: #6b7280;
+    }
+    &__cos{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
     }
 }

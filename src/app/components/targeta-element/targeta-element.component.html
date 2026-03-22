@@ -1,10 +1,18 @@
-<div class="targeta" *ngIf="element">
-    <h3>{{ element.nom }}</h3>
-    <p>Usuari: {{ element.usuari }}</p>
-    <p>Contrasenya: {{ element.contrasenya }}</p>
-    <p>Categoria: {{ element.categoria | uppercase }}</p>
-    <p>Seguretat: {{ element.seguretat | number }}/100</p>
-    <p>Longitud: {{ element.longitud }}</p>
-    <p>Data: {{ element.dataCreacio | date:'dd/MM/yyyy' }}</p>
-    <p *ngIf="element.url">Url: {{ element.url }}</p>
+<div class="targeta" *ngIf="element" [ngClass]="element.categoria.toLowerCase()" role="article" [attr.aria-label]="'Credencial de ' + element.nom">
+    
+    <!-- Capçalera amb nom i categoria -->
+    <div class="targeta__capçalera">
+        <h3 class="targeta__nom">{{ element.nom }}</h3>
+        <span class="targeta__categoria" role="note">{{ element.categoria | uppercase }}</span>
+    </div>
+
+    <!-- Cos, els emojis no es llegeixen en veu alta, les altres si-->
+    <div class="targeta__cos">
+        <p><span aria-hidden="true">👤</span> <span aria-label="Usuari">{{ element.usuari }}</span></p>
+        <p><span aria-hidden="true">🔒</span> <span aria-label="Contrasenya oculta">••••••••••••</span></p>
+        <p><span aria-hidden="true">💪</span> <span aria-label="Seguretat">{{ element.seguretat | number }}/100</span></p>
+        <p><span aria-hidden="true">📏</span> <span aria-label="Longitud">{{ element.longitud }} caràcters</span></p>
+        <p><span aria-hidden="true">📅</span> <span aria-label="Data de creació">{{ element.dataCreacio | date:'dd/MM/yyyy' }}</span></p>
+    <p *ngIf="element.url"><span aria-hidden="true">🌐</span> <span aria-label="URL">{{ element.url }}</span></p>
+    </div>
 </div>

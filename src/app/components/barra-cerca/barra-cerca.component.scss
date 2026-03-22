@@ -1,23 +1,27 @@
 .barra-cerca {
     display: flex;
     justify-content: center;
-    margin: 50px auto;
     padding: 0 1rem;
+    margin: 70px auto 30px auto;
 
+    // Formulari
     form {
         display: flex;
         flex-direction: column;
         width: 100%;
         max-width: 600px;
+        min-height: 80px;
+        position: relative;
     }
 
+    // Input i botó a la mateixa fila
     .input-boto {
         display: flex;
         gap: 10px;
         align-items: stretch;
     }
 
-    //estils del string input
+    // Estils del string input
     input {
         flex: 1;
         height: 30px;
@@ -29,14 +33,14 @@
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
-        //ombra al passar el ratolí
+        // Ombra al passar el ratolí
         &:hover {
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
         }
 
-        //vora al escriure
+        // Vora al escriure
         &:focus {
-            border-color: #7cd6ef;
+            border-color: #618f9c;
             border-width: 3px;
             box-shadow: 0px 4px 10px rgba(1, 1, 1, 0.40);
         }
@@ -44,9 +48,9 @@
 
     //botó cercar amb lupa
     button {
-        height: 58px;
+        height: 57px;
         width: 50px;
-        background: #7cd6ef;
+        background: #1b6479;
         color: white;
         border: none;
         border-radius: 8px;
@@ -56,24 +60,30 @@
         align-items: center;
         justify-content: center;
 
-    // icona de lupa
+    // Icona de lupa
     .material-icons {
         font-size: 24px;
     }
 
-    //color més fosc al passar per sobre
-    &:hover {
-        background: #5bc4de;
+    //clic
+    &:active {
+        transform: scale(0.95);
+        background: #4ab8d8;
     }
 
-    //gris quan boto no es pot fer servir
+    // Color més fosc al passar per sobre
+    &:hover {
+        background: #51a6bb;
+    }
+
+    // Gris quan boto no es pot fer servir
     &:disabled {
-        background: #e5e7eb;
+        background: #cdcdcd;
         cursor: not-allowed;
     }
 }
 
-    //missatge d'error < 3 caracters
+    // Missatge d'error < 3 caracters, no mou les targetes
     .error {
         color: rgb(255, 33, 33);
 
@@ -81,5 +91,15 @@
         font-size: 1.2rem;
         padding: 0.5rem 0;
         font-style: italic;
+        top: 50px;
+        position: absolute;
+    }
+    // Label invisible
+    .visually-hiden{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
     }
 }
