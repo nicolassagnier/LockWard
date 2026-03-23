@@ -3,7 +3,7 @@
     <div class="input-boto">
 
       <!-- Label invisible -->
-      <label for="cercaInput" class="visually-hiden">
+      <label for="cercaInput" class="visually-hidden">
         Cerca credencials
       </label>
 
@@ -17,13 +17,22 @@
         #campCerca="ngModel"
         minlength="3"
         autocomplete="off"
+        aria-required="false"
+        aria-describedby="instruccions-cerca"
         (ngModelChange)="onCerca()">
 
       <!-- Botó de cerca -->
-      <button type="submit" [disabled]="cercaForm.invalid && cercaForm.dirty">
+      <button type="submit" 
+      [disabled]="cercaForm.invalid && cercaForm.dirty"
+      aria-label="Cercar credencials">
         <span class="material-icons">search</span>
       </button>
     </div>
+
+    <!-- Instruccions per lectors de pantalla -->
+    <p id="instruccions-cerca" class="visually-hidden">
+      Escriu mínim 3 caràcters per cercar credencials
+    </p>
 
     <!-- Missatge error -->
     <p class="error" *ngIf="textCerca.length > 0 && textCerca.length < 3">

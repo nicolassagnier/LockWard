@@ -1,4 +1,9 @@
-<div class="targeta" *ngIf="element" [ngClass]="element.categoria.toLowerCase()" role="article" [attr.aria-label]="'Credencial de ' + element.nom">
+<div class="targeta" 
+    *ngIf="element" 
+    [ngClass]="element.categoria.toLowerCase()" 
+    role="article" 
+    [attr.aria-label]="'Credencial de ' + element.nom"
+    tabindex="0">
     
     <!-- Capçalera amb nom i categoria -->
     <div class="targeta__capçalera">

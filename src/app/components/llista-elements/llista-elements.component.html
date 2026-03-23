@@ -2,7 +2,14 @@
         (cercaCanviada)="onCerca($event)">
 </app-barra-cerca>
 
-<div class="llista">
+<!-- Spinner  -->
+<div class="spinner-contenidor" *ngIf="carregant">
+    <div class="spinner"></div>
+    <p>Carregant credencials...</p>
+</div>
+
+<!-- Llista targetes -->
+<div class="llista" *ngIf="!carregant">
 
     <app-targeta-element
         *ngFor="let element of elementsFiltrats; trackBy: trackById"

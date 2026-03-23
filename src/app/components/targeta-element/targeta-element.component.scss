@@ -9,8 +9,16 @@
 
     //efecte
     &:hover{
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+        transform: translateY(-8px);
+    }
+
+    //usuaris de teclat
+    &:focus {
+    //outline: 3px solid #438da2;
+    outline: none;
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
     }
 
     //colors per a cada targeta segons categoria
@@ -18,15 +26,15 @@
         border-left-color: #7cd6ef;
     }
     &.feina {
-    border-left-color: #6ee7b7; // verd
+    border-left-color: #6ee7b7; 
     }
 
     &.entreteniment {
-    border-left-color: #c4b5fd; // lila
+    border-left-color: #c4b5fd; 
     }
 
     &.bancs {
-    border-left-color: #fcd34d; // groc
+    border-left-color: #fcd34d; 
     }
 
     //capçalera estils
@@ -61,6 +69,20 @@
             margin: 0;
             font-size: 0.95rem;
             color: #4b5563;
+        }
+    }
+    // Animacions reduides al S.O
+    @media (prefers-reduced-motion: reduce) {
+        .targeta {
+            transition: none;
+    
+            &:hover {
+                transform: none;
+            }
+    
+            &:focus {
+                transform: none;
+            }
         }
     }
 }

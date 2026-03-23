@@ -1,27 +1,35 @@
-# IocAngularLockwardNicolassagnier
+# LockWard - Nicolás Sagnier Fernández de Castro
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Descripció
+LockWard és un gestor de credencials desenvolupat amb Angular i C# on les contrasenyes es xifren en el navegador de l'usuari abans de ser enviades al servidor. Les dades es guardaran a MariaDB i només el propietari podrà recuperar i desxifrar la seva informació.
 
-## Development server
+## Stack Tècnic
+Aquest projecte serà desenvolupat per aquestes tecnologies:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Frontend**
+- Angular
+- Cifratge AES-256
 
-## Code scaffolding
+**Backend**
+- ASP.NET Core Web API
+- Json Web Tokens
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Base de dades**
+- MariaDB
 
-## Build
+**Connexió de la API a MariaDB**
+- Pomelo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Estat del projecte
+Unitat 2 - Components i formularis completat
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Model de dades "Element" amb TypeScript
+- Dades mock amb 10 credencials 
+- Components targeta-element, llista-elements i barra-cerca
+- Comunicació pare-fill amb @Input i @Output
+- Cerca en temps real amb `[(ngModel)]` i validació minlength=3
+- Directives *ngFor amb trackBy i *ngIf per gestionar estats
+- Pipes uppercase, date i number
+- Disseny responsive 1/2/3 amb CSS Grid i auto-fill minmax (adaptar llista a pantalla)
+- Spinner de càrrega amb @keyframes
+- Accessibilitat amb atributs ARIA i labels, aria-describedby per lectors de pantalla, skip link invisible, prefers-reduced-motion i tabindex="0" per navegar per les targetes amb Tab.

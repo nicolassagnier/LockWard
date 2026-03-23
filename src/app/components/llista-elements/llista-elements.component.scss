@@ -1,23 +1,13 @@
-.llista{
-    //responsive
+.llista {
     display: grid;
     gap: 1.5rem;
     padding: 1.5rem;
 
-    //Mòbil
-    grid-template-columns: 1fr;
+    // Adapta automàticament
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-    //Tablet
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    //PC
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 1900px;
-        margin: 0 auto;
-    }
+    max-width: 1900px;
+    margin: 0 auto;
 }
 
 .no-resultats{
@@ -28,3 +18,49 @@
     padding: 3rem 0;
     font-style: italic;
 }
+
+//spinner centrat
+.spinner-contenidor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 1rem;
+
+    p {
+        color: #6b7280;
+        font-style: italic;
+    }
+}
+
+//spinner animació
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 5px solid #cedeff;
+    border-top-color: #1b6479;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+
+    //usuari té moviment reduit
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+        border-top-color: #1b6479;
+    }
+}
+
+//spinner rotació
+@keyframes spin{
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+

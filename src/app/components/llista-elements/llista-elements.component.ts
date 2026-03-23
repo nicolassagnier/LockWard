@@ -15,9 +15,16 @@ import { BarraCercaComponent } from '../barra-cerca/barra-cerca.component';
 export class LlistaElementsComponent {
   elements: Element[] = [...DADES_MOCK];
   elementsFiltrats: Element[] = [...DADES_MOCK];
+  carregant: boolean = true;
 
   trackById(index: number, element: Element): number {
     return element.id;
+  }
+
+  constructor() {
+    setTimeout(() => {
+      this.carregant = false;
+    }, 1500);
   }
 
   onCerca(text: string) {
