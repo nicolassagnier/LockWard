@@ -1,11 +1,29 @@
-export interface Element {
-    id: number;
+export interface ElementApiResponse {
+    id: string;
     nom: string;
-    usuari: string;
-    contrasenya: string;
+    descripcio: string;
     categoria: string;
-    seguretat: number;
-    longitud: number;
-    dataCreacio: string;
+    preu: number;
+    imatge: string;
+    popular: boolean;
+    stock: number;
+    usuari?: string;
+    longitud?: number;
+    dataCreacio?: string;
     url?: string;
+}
+
+export interface ElementCataleg {
+    id: string;
+    titol: string;      
+    descripcio: string;
+    categoria: string;
+    preu: number;        
+    imatgeUrl: string;  
+    esPopular: boolean; 
+    unitats: number;    
+    usuari?: string;
+    longitud?: number;
+    dataCreacio?: string;
+    url?: string;   
 }

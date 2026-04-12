@@ -3,20 +3,27 @@
 </app-barra-cerca>
 
 <!-- Spinner  -->
-<div class="spinner-contenidor" *ngIf="carregant">
-    <div class="spinner"></div>
-    <p>Carregant credencials...</p>
-</div>
-
-<!-- Llista targetes -->
-<div class="llista" *ngIf="!carregant">
-
-    <app-targeta-element
-        *ngFor="let element of elementsFiltrats; trackBy: trackById"
-        [element]="element">
-    </app-targeta-element>
-
-    <p class="no-resultats" *ngIf="elementsFiltrats.length === 0">
-        No s'han trobat credencials.
-    </p>
-</div>
+@if (elementService.carregant()) {
+    <div class="spinner-contenidor">
+        <div class="spinner"></div>
+        <p>Carregant credencials...</p>
+    </div>
+}
+<!--Estat error-->
+@if (elementService.error()) {
+    <div class="error-contenidor">
+        <p class="error-msg">{{ elementService.error() }}</p>
+        <button (click)="elementService.obtenirPopulars()">Torna a intentar-ho</button>
+    </div>
+}
+<!--Llista de targetes-->
+@if (!elementService.carregant() && !elementService.error()) {
+    <div class="llista">
+        @for (element of elementService.elements(); track element.id) {
+            <app-targeta-element [element]="element"></app-targeta-element>
+        } @empty {
+            <!-- Estat sense resultats -->
+            <p class="no-resultats">No s'han trobat credencials.</p>
+        }
+    </div>
+}

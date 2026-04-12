@@ -1,4 +1,25 @@
-
+.targeta__logo {
+    width: 32px;  
+    height: 32px;
+    object-fit: contain; 
+    margin-right: 10px;  
+}
+.targeta__capçalera {
+    display: flex;
+    align-items: center; 
+}
+img[alt*="Logo de X"] {
+    transform: scale(0.8)
+}
+img[alt*="Logo de PayPal"] {
+    transform: scale(1.8)
+}
+img[alt*="Logo de Amazon"] {
+    transform: scale(1.5)
+}
+img[alt*="Logo de Netflix"] {
+    transform: scale(1.4)
+}
 .targeta {
     background: white;
     border-radius: 12px;
@@ -15,7 +36,6 @@
 
     //usuaris de teclat
     &:focus {
-    //outline: 3px solid #438da2;
     outline: none;
     transform: translateY(-8px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);

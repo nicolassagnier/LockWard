@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { Element } from '../../models/element.model';
-import { NgIf, DatePipe, DecimalPipe, UpperCasePipe, NgClass } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { ElementCataleg } from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',
   standalone: true,
-  imports: [NgIf, DatePipe, DecimalPipe, UpperCasePipe, NgClass],
+  imports: [CommonModule],
   templateUrl: './targeta-element.component.html',
   styleUrl: './targeta-element.component.scss'
 })
 export class TargetaElementComponent {
-  @Input() element!: Element;
+  @Input() element!: ElementCataleg;
 }
