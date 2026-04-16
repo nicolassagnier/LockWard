@@ -1,0 +1,36 @@
+<form [formGroup] = "cercaForm" class="search-box">
+    <div class="input-container">
+        <input 
+            type="text"
+            formControlName="tCerca"
+            placeholder="Cerca credencials..."
+            [class.is-invalid]="tControl?.invalid && tControl?.touched">
+
+        <!--Validació asíncrona i pending 500ms delay-->
+        <div *ngIf="tControl?.pending" class="loading-text">
+            <small>Validant disponibilitat...</small>
+        </div>
+
+        <!--Botó apareix quan input té un valor-->
+        <button
+            *ngIf="tControl?.value"
+            type="button"
+            (click)="netejarCerca()"
+            class="btn-netejar">
+            Netejar
+        </button>
+    </div>
+
+    <!--Error surt si és invàlid i (he començat a escriure o tocat)-->
+    <div *ngIf="tControl?.invalid && (tControl?.dirty || tControl?.touched)" class="error-contenidor">
+        <small *ngIf="tControl?.errors?.['minlength']" class="error-msg">
+            Mínim 2 caràcters requerits.
+        </small>
+        <small *ngIf="tControl?.errors?.['maxlength']" class="error-msg">
+            Màxim 50 caràcters.
+        </small>
+        <small *ngIf="tControl?.errors?.['senseResultats']" class="error-msg">
+            No s'han trobat elements amb aquest terme.
+        </small>
+    </div>
+</form>
