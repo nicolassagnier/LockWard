@@ -15,7 +15,8 @@ export class TargetaElementComponent {
 
   public preferitsServeis = inject(PreferitsService)
 
-  togglePreferit(): void {
+  togglePreferit(event: Event): void {
+    event.stopPropagation();
     if (this.preferitsServeis.esPreferit(this.element.id)) {
       this.preferitsServeis.eliminarPreferit(this.element.id);
     } else {

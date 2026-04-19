@@ -1,35 +1,24 @@
-# LockWard - Nicolás Sagnier Fernández de Castro
+# EAC3 — Programació Avançada (Angular) · IOC
 
-## Descripció
-LockWard és un gestor de credencials desenvolupat amb Angular i C# on les contrasenyes es xifren en el navegador de l'usuari abans de ser enviades al servidor. Les dades es guardaran a MariaDB i només el propietari podrà recuperar i desxifrar la seva informació.
+Aquest projecte és la tercera entrega de l'assignatura **Programació Avançada (Angular)** de l'IOC. L'objectiu de l'EAC3 ha estat integrar serveis HTTP, gestionar estats amb Signals i construir formularis reactius avançats.
 
-## Stack Tècnic
-Aquest projecte serà desenvolupat per aquestes tecnologies:
+## Funcionalitats principals
 
-**Frontend**
-- Angular
-- Cifratge AES-256
+- **Consum d'API Mock:** Connexió amb `json-server` per obtenir dades en temps real.
+- **Cercador intel·ligent:** Formulari reactiu amb validacions síncrones i asíncrones, i optimització de peticions amb `debounceTime`.
+- **Gestió de preferits:** Sistema de favorits amb persistència automàtica al `localStorage`.
+- **Notes dinàmiques:** `FormArray` per afegir notes personals a cada element preferit, amb validació individual per camp.
 
-**Backend**
-- ASP.NET Core Web API
-- Json Web Tokens
+## Detalls tècnics
 
-**Base de dades**
-- MariaDB
+### Serveis i reactivitat
 
-**Connexió de la API a MariaDB**
-- Pomelo
+- **Signals:** He gestionat els estats de càrrega, error i dades amb Signals de lectura/escriptura i valors `computed`.
+- **Effects:** La sincronització amb el `localStorage` es fa automàticament mitjançant Angular Effects, sense guardats manuals.
+- **Adaptadors:** He implementat mappers per desacoblar l'estructura de l'API del model intern de l'aplicació.
 
-## Estat del projecte
-Unitat 2 - Components i formularis completat
+### Formularis avançats
 
-- Model de dades "Element" amb TypeScript
-- Dades mock amb 10 credencials 
-- Components targeta-element, llista-elements i barra-cerca
-- Comunicació pare-fill amb @Input i @Output
-- Cerca en temps real amb `[(ngModel)]` i validació minlength=3
-- Directives *ngFor amb trackBy i *ngIf per gestionar estats
-- Pipes uppercase, date i number
-- Disseny responsive 1/2/3 amb CSS Grid i auto-fill minmax (adaptar llista a pantalla)
-- Spinner de càrrega amb @keyframes
-- Accessibilitat amb atributs ARIA i labels, aria-describedby per lectors de pantalla, skip link invisible, prefers-reduced-motion i tabindex="0" per navegar per les targetes amb Tab.
+- **Validació asíncrona:** Simulació d'una consulta a l'API amb un retard de 500ms per verificar la disponibilitat de dades.
+- **`FormArray`:** Formularis dinàmics per gestionar les notes, amb possibilitat d'afegir i eliminar camps en temps d'execució.
+- **UX/UI:** Botons de guardat amb estats visuals (actiu/desactivat) i efectes d'elevació CSS en fer hover.

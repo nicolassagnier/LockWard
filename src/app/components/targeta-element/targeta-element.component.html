@@ -22,7 +22,7 @@
         <p *ngIf="element.url"><span aria-hidden="true">🌐</span> <span aria-label="URL">{{ element.url }}</span></p>
     </div>
 
-    <button (click)="togglePreferit()"
+    <button (click)="togglePreferit($event)"
             class="targeta__button__fav"
             [class.targeta__button__fav--actiu]="preferitsServeis.esPreferit(element.id)"
             [attr.aria-label]="preferitsServeis.esPreferit(element.id) ? 'Treure de preferits' : 'Afegir a preferits'">

@@ -8,8 +8,6 @@
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
     z-index: 1000;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    // mostrar botó sense mostrar panell
     transform: translateX(-300px); 
 
     &--obert {
@@ -63,39 +61,141 @@
     .preferits-llista {
         display: flex;
         flex-direction: column; 
-        gap: 12px;
+        gap: 15px; 
     }
 
     .preferits-item-vertical {
         display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 10px;
+        flex-direction: column; 
+        gap: 8px;
+        padding: 12px;
         background: #f8f9fa;
         border-radius: 8px;
         border: 1px solid #eee;
 
-        .item-mini-logo {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-        }
-
-        .info {
-            flex-grow: 1;
+        .header-item {
             display: flex;
-            flex-direction: column;
-            strong { font-size: 0.9rem; }
-            small { font-size: 0.7rem; color: #7f8c8d; }
+            align-items: center;
+            width: 100%;
+            gap: 12px;
+
+            .item-mini-logo {
+                width: 30px;
+                height: 30px;
+                object-fit: contain;
+            }
+
+            .info {
+                flex-grow: 1;
+                strong { font-size: 0.85rem; color: #2c3e50; }
+            }
+
+            .btn-eliminar-icon {
+                background: none;
+                border: none;
+                color: #ccc;
+                font-size: 1.2rem;
+                cursor: pointer;
+                &:hover { color: #e74c3c; }
+            }
         }
 
-        .btn-eliminar-icon {
-            background: none;
-            border: none;
-            color: #ccc;
-            font-size: 1.5rem;
-            cursor: pointer;
-            &:hover { color: #e74c3c; }
+        .notes-area {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+
+            .header-notes {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+
+                .notes-titol {
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: #34495e;
+                }
+
+                .btn-save-icon {
+                    background: #79b893;
+                    border: none;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+
+                    svg {
+                        width: 26px;  
+                        height: 26px; 
+                    }
+
+                    &:disabled {
+                        background: #ecf0f1;
+                        color: #bdc3c7;
+                    }
+                    &:active {
+                        transform: translateY(-1px);
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+
+            .nota-input-group {
+                margin-bottom: 10px;
+
+                .error-text {
+                    color: #db3934;
+                }
+
+                .input-fila {
+                    display: flex;
+                    gap: 8px;
+                
+                    .input-nota {
+                        flex: 1;
+                        padding: 6px 10px;
+                        border: 1px solid #ddd; 
+                        border-radius: 4px;
+                        font-size: 0.85rem;
+                    }
+
+                    .btn-borrar-nota {
+                        background: none;
+                        border: none;
+                        color: #e74c3c;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .btn-afegir-nota {
+                width: 100%;
+                padding: 8px;
+                background: white;
+                border: 1px dashed #3498db;
+                color: #3498db;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                cursor: pointer;
+
+                svg {
+                width: 20px;
+                height: 20px;
+                }
+
+                &:hover {
+                    background: #f0f1ff;
+                }
+            }
         }
     }
 }

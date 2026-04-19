@@ -52,5 +52,12 @@ export class PreferitsService {
     }
   }
 
+  //busca l'element per la seva id en l'array de notes, si el troba canvia 
+  //les notes i actualitza.
+  actualitzarNotes(id: string, novesNotes: string[]): void {
+    this._preferits.update(llista => 
+      llista.map(item => item.id === id ? { ...item, notes: novesNotes } : item)
+    );
+  }
 }
 

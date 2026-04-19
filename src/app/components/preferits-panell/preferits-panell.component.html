@@ -1,31 +1,71 @@
 <section class="preferits-sidebar" [class.preferits-sidebar--obert]="estatObert()">
-    <!-- Panell lateral -->
+    
+    <!-- Botó lateral-->
     <div (click)="togglePanell()" class="sidebar-toggle" role="button">
         <span class="comptador">{{ preferitsServeis.totalPreferits() }}</span>
         <span class="fletxa" [class.fletxa--open]="estatObert()">▶</span>
     </div>
 
-    <!-- Contingut menú lateral -->
+    <!-- Contingut del menú lateral -->
     <div class="sidebar-contingut" *ngIf="estatObert()">
         <h2 class="sidebar-titol">Els meus preferits</h2>
         
+        <!-- Missatge si la llista està buida -->
         <p *ngIf="preferitsServeis.totalPreferits() === 0" class="buit-msg">
             Sense preferits
         </p>
 
-        <!-- Info vertical  -->
-        <div class="preferits-llista" *ngIf="preferitsServeis.totalPreferits() > 0">
-            <div *ngFor="let item of preferitsServeis.preferits()" class="preferits-item-vertical">
-                <img [src]="item.imatgeUrl" [alt]="item.titol" class="item-mini-logo">
-                <div class="info">
-                    <strong>{{ item.titol }}</strong>
-                    <small>{{ item.categoria }}</small>
+        <div class="preferits-llista" *ngIf="preferitsServeis.totalPreferits() > 0" [formGroup]="notesForm">
+            <div formGroupName="llistesNotes">
+                
+                <div *ngFor="let item of preferitsServeis.preferits(); trackBy: trackByItem" class="preferits-item-vertical">
+                    
+                    <div class="header-item">
+                        <img [src]="item.imatgeUrl" [alt]="item.titol" class="item-mini-logo">
+                        <div class="info">
+                            <strong>{{ item.titol }}</strong>
+                        </div>
+                        <button (click)="preferitsServeis.eliminarPreferit(item.id); $event.stopPropagation()" 
+                                class="btn-eliminar-icon" title="Eliminar de preferits">
+                            &times;
+                        </button>
+                    </div>
+                    <div [formArrayName]="item.id" class="notes-area">
+                        <div class="header-notes">
+                            <span class="notes-titol">Notes personals</span>
+                            
+                            <button type="button" 
+                                    (click)="guardarNotes(item.id)" 
+                                    [disabled]="getNotesArray(item.id).controls.length === 0 || getNotesArray(item.id).invalid"
+                                    class="btn-save-icon"
+                                    title="Guardar canvis">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            </button>
+                        </div>
+
+                        <div *ngFor="let nota of getNotesArray(item.id).controls; let i = index; trackBy: trackByNota" class="nota-input-group">
+                            <div class="input-fila">
+                            <input [formControlName]="i" placeholder="Escriu una nota..." class="input-nota">
+                            <button type="button" (click)="eliminarNota(item.id, i)" class="btn-borrar-nota">×</button>
+                            </div>
+                            
+                            <small *ngIf="getNotesArray(item.id).at(i).invalid && getNotesArray(item.id).at(i).touched" class="error-text">
+                            Mínim 3 caràcters.
+                            </small>
+                        </div>
+
+                        <button type="button" (click)="afegirNota(item.id)" class="btn-afegir-nota">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+                            </svg>
+                            <span>Afegir nota</span>
+                        </button>
+                    </div>
                 </div>
-                <button (click)="preferitsServeis.eliminarPreferit(item.id); $event.stopPropagation()" 
-                        class="btn-eliminar-icon" title="Eliminar">
-                    &times;
-                </button>
             </div>
         </div>
     </div>
 </section>
+

@@ -25,5 +25,6 @@ export interface ElementCataleg {
     usuari?: string;
     longitud?: number;
     dataCreacio?: string;
-    url?: string;   
+    url?: string;
+    notes?: string[];   
 }

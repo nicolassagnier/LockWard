@@ -62,7 +62,7 @@ img[alt*="Logo de Netflix"] {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
     }
 
-    //colors per a cada targeta segons categoria
+    //colors categoria
     &.personal{
         border-left-color: #7cd6ef;
     }
@@ -112,7 +112,7 @@ img[alt*="Logo de Netflix"] {
             color: #4b5563;
         }
     }
-    // Animacions reduides al S.O
+    // animacio adaptada per altres dispositius
     @media (prefers-reduced-motion: reduce) {
         .targeta {
             transition: none;
