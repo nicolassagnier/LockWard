@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common'; //pipes
-import { ElementService } from '../../services/element.service';
+import { ElementService } from '../../serveis/element.service';
 import { TargetaElementComponent } from '../targeta-element/targeta-element.component';
 import { FormulariCercaComponent } from '../formulari-cerca/formulari-cerca.component';
 

@@ -1,0 +1,31 @@
+<section class="preferits-sidebar" [class.preferits-sidebar--obert]="estatObert()">
+    <!-- Panell lateral -->
+    <div (click)="togglePanell()" class="sidebar-toggle" role="button">
+        <span class="comptador">{{ preferitsServeis.totalPreferits() }}</span>
+        <span class="fletxa" [class.fletxa--open]="estatObert()">▶</span>
+    </div>
+
+    <!-- Contingut menú lateral -->
+    <div class="sidebar-contingut" *ngIf="estatObert()">
+        <h2 class="sidebar-titol">Els meus preferits</h2>
+        
+        <p *ngIf="preferitsServeis.totalPreferits() === 0" class="buit-msg">
+            Sense preferits
+        </p>
+
+        <!-- Info vertical  -->
+        <div class="preferits-llista" *ngIf="preferitsServeis.totalPreferits() > 0">
+            <div *ngFor="let item of preferitsServeis.preferits()" class="preferits-item-vertical">
+                <img [src]="item.imatgeUrl" [alt]="item.titol" class="item-mini-logo">
+                <div class="info">
+                    <strong>{{ item.titol }}</strong>
+                    <small>{{ item.categoria }}</small>
+                </div>
+                <button (click)="preferitsServeis.eliminarPreferit(item.id); $event.stopPropagation()" 
+                        class="btn-eliminar-icon" title="Eliminar">
+                    &times;
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -28,6 +28,27 @@ img[alt*="Logo de Netflix"] {
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     border-left: 5px solid #e5e7eb;
 
+    position: relative;
+    &__button__fav {
+        position: absolute;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        right: 15px;
+        bottom: 20px;
+        scale: 1.4;
+        padding: 5px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+        &--actiu {
+            background: #fff0f0;
+        }
+    }
+
     //efecte
     &:hover{
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);

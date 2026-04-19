@@ -3,7 +3,7 @@ import { debounceTime, distinctUntilChanged, delay, of, map, Observable } from '
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ElementService } from '../../services/element.service';
+import { ElementService } from '../../serveis/element.service';
 
 @Component({
   selector: 'app-formulari-cerca',

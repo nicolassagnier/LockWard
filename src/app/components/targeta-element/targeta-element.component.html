@@ -19,6 +19,15 @@
         <p><span aria-hidden="true">💪</span> <span aria-label="Seguretat">{{ element.preu | number }}/100</span></p>
         <p><span aria-hidden="true">📏</span> <span aria-label="Longitud">{{ element.longitud }} caràcters</span></p>
         <p><span aria-hidden="true">📅</span> <span aria-label="Data de creació">{{ element.dataCreacio | date:'dd/MM/yyyy' }}</span></p>
-    <p *ngIf="element.url"><span aria-hidden="true">🌐</span> <span aria-label="URL">{{ element.url }}</span></p>
+        <p *ngIf="element.url"><span aria-hidden="true">🌐</span> <span aria-label="URL">{{ element.url }}</span></p>
     </div>
+
+    <button (click)="togglePreferit()"
+            class="targeta__button__fav"
+            [class.targeta__button__fav--actiu]="preferitsServeis.esPreferit(element.id)"
+            [attr.aria-label]="preferitsServeis.esPreferit(element.id) ? 'Treure de preferits' : 'Afegir a preferits'">
+        <span aria-hidden="true">
+            {{ preferitsServeis.esPreferit(element.id) ? '❤️' : '🤍' }}
+        </span>
+    </button>
 </div>
